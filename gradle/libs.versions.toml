@@ -8,6 +8,8 @@ androidxTextExtVersion = "1.1.5"
 androidxTestExpressoVersion = "3.5.1"
 androidGradlePluginVersion = "7.4.1"
 jetbrainsKotlinAndroidVersion = "1.9.0"
+comSquareupRetrofit2Version = "2.9.0"
+lifecycleVersion = "2.5.0-alpha02"
 
 [libraries]
 androidx-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidxKtxVersion" }
@@ -17,6 +19,23 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 junit = { group = "junit", name = "junit", version.ref = "junitVersion" }
 androidx-test-ext = { group = "androidx.test.ext", name = "junit", version.ref = "androidxTextExtVersion" }
 androidx-test-espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidxTestExpressoVersion" }
+com-squareup-retrofit2 = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "comSquareupRetrofit2Version" }
+com-squareup-retrofit2-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "comSquareupRetrofit2Version" }
+androidx-lifecycle-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleVersion" }
+androidx-lifecycle-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycleVersion" }
+androidx-lifecycle-lifecycle-viewmodel-savedstate = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-savedstate", version.ref = "lifecycleVersion" }
+
+[bundles]
+lifecycle = [
+    "androidx-lifecycle-lifecycle-viewmodel-ktx",
+    "androidx-lifecycle-lifecycle-livedata-ktx",
+    "androidx-lifecycle-lifecycle-viewmodel-savedstate"
+]
+
+retrofit = [
+    "com-squareup-retrofit2",
+    "com-squareup-retrofit2-converter-gson"
+]
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePluginVersion" }
