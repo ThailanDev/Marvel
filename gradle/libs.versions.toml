@@ -25,6 +25,11 @@ androidx-lifecycle-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", nam
 androidx-lifecycle-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycleVersion" }
 androidx-lifecycle-lifecycle-viewmodel-savedstate = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-savedstate", version.ref = "lifecycleVersion" }
 
+androidx-navigation-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "lifecycleVersion" }
+androidx-navigation-navigation-ui-ktx = {group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "lifecycleVersion"}
+androidx-navigation-navigation-dynamic-features-fragment = {group = "androidx.navigation", name = "navigation-dynamic-features-fragment", version.ref = "lifecycleVersion"}
+androidx-navigation-navigation-testing = {group = "androidx.navigation", name = "navigation-testing", version.ref = "lifecycleVersion"}
+
 [bundles]
 lifecycle = [
     "androidx-lifecycle-lifecycle-viewmodel-ktx",
