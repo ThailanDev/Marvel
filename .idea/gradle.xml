@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/core-kotlin" />
             <option value="$PROJECT_DIR$/details" />
             <option value="$PROJECT_DIR$/list" />
+            <option value="$PROJECT_DIR$/mylibrary" />
           </set>
         </option>
       </GradleProjectSettings>

@@ -5,14 +5,14 @@ plugins {
 }
 
 android {
-    namespace = "${configuration.ConfigData.BASE_NAME}${configuration.ConfigData.LIST_MODULE}"
-    compileSdk = configuration.ConfigData.compileSdkVersion
+    namespace = "com.example.mylibrary"
+    compileSdk = 33
 
     defaultConfig {
-        namespace = "${configuration.ConfigData.BASE_NAME}${configuration.ConfigData.LIST_MODULE}"
-        minSdk = configuration.ConfigData.minSdkVersion
-        targetSdk =  configuration.ConfigData.targetSdk
+        minSdk = 24
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -25,19 +25,20 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = configuration.ConfigData.sourceCompatibilityVersion
-        targetCompatibility = configuration.ConfigData.targetCompatibilityVersion
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = configuration.ConfigData.jvmTargetVersion
+        jvmTarget = "1.8"
     }
 }
 
 dependencies {
-    implementation(libs.bundles.common)
+
+    implementation(libs.androidx.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.android.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext)
     androidTestImplementation(libs.androidx.test.espresso)
-    implementation(libs.bundles.lifecycle)
-    implementation(libs.bundles.navigation)
 }

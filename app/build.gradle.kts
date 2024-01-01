@@ -38,9 +38,13 @@ android {
 }
 
 dependencies {
+    implementation(project(":list"))
     implementation(libs.bundles.common)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext)
     androidTestImplementation(libs.androidx.test.espresso)
     implementation(libs.bundles.lifecycle)
+    implementation(libs.bundles.navigation)
 }
