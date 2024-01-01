@@ -37,9 +37,6 @@ android {
 dependencies {
     implementation(libs.androidx.ktx)
     implementation(libs.androidx.appcompat)
-    implementation(libs.android.material)
-    implementation(libs.androidx.constraintlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext)
-    androidTestImplementation(libs.androidx.test.espresso)
 }

@@ -19,6 +19,7 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 junit = { group = "junit", name = "junit", version.ref = "junitVersion" }
 androidx-test-ext = { group = "androidx.test.ext", name = "junit", version.ref = "androidxTextExtVersion" }
 androidx-test-espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidxTestExpressoVersion" }
+
 com-squareup-retrofit2 = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "comSquareupRetrofit2Version" }
 com-squareup-retrofit2-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "comSquareupRetrofit2Version" }
 androidx-lifecycle-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleVersion" }
@@ -31,6 +32,14 @@ androidx-navigation-navigation-dynamic-features-fragment = {group = "androidx.na
 androidx-navigation-navigation-testing = {group = "androidx.navigation", name = "navigation-testing", version.ref = "lifecycleVersion"}
 
 [bundles]
+
+common = [
+    "androidx-ktx",
+    "androidx-appcompat",
+    "android-material",
+    "androidx-constraintlayout"
+]
+
 lifecycle = [
     "androidx-lifecycle-lifecycle-viewmodel-ktx",
     "androidx-lifecycle-lifecycle-livedata-ktx",
