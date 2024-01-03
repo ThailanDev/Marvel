@@ -53,8 +53,9 @@ retrofit = [
     "com-squareup-retrofit2-converter-gson"
 ]
 navigation = [
-    "androidx-navigation-navigation-fragment-ktx",
-    "androidx-navigation-navigation-ui-ktx",
+    #    aqui você está repetindo as mesmas versões do  androidx-navigation-fragment-ktx e do androidx-navigation-ui-ktx
+    #    "androidx-navigation-navigation-fragment-ktx",
+    #    "androidx-navigation-navigation-ui-ktx",
     "androidx-navigation-navigation-dynamic-features-fragment",
     "androidx-navigation-fragment-ktx",
     "androidx-navigation-ui-ktx",

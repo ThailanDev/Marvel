@@ -39,9 +39,12 @@ android {
 
 dependencies {
     implementation(libs.bundles.common)
+    implementation(libs.androidx.navigation.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.navigation.ui.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext)
     androidTestImplementation(libs.androidx.test.espresso)
-    implementation(libs.bundles.navigation)
+    // aí aqui duplica com a do libs.androidx.navigation.navigation.fragment.ktx e do libs.androidx.navigation.navigation.ui.ktx
+//    implementation(libs.bundles.navigation)
     implementation(libs.bundles.lifecycle)
 }
