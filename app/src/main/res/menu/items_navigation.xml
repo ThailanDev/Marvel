@@ -4,7 +4,7 @@
         android:title="@string/menu_navigation_favoritos"
         android:icon="@drawable/ic_nav_favorite" />
     <item
-        android:id="@+id/action_navigation"
+        android:id="@+id/list_dist"
         android:title="@string/menu_navigation_list"
         android:icon="@drawable/ic_nav_list" />
 </menu>

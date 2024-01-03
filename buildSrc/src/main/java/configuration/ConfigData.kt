@@ -11,7 +11,7 @@ object ConfigData {
     const val LIST_MODULE = "list"
     const val COLON = ":"
     const val compileSdkVersion = 34
-    const val minSdkVersion = 24
+    const val minSdkVersion = 21
     const val targetSdk = 34
     const val versionName = "1.0"
     const val versionCode = 1

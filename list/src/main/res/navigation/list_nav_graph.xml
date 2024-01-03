@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/list_nav_graph"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/listFragment">
+    app:startDestination="@id/list_dist">
 
     <fragment
-        android:id="@+id/listFragment"
+        android:id="@+id/list_dist"
         android:name="com.example.list.ListFragment"
         tools:layout="@layout/fragment_list"
-        android:label="navi" />
+        android:label="list_dist" />
 </navigation>
