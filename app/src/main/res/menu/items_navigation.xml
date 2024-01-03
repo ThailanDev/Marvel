@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <item android:id="@+id/action_settings"
+        android:title="@string/menu_navigation_favoritos"
+        android:icon="@drawable/ic_nav_favorite" />
+    <item
+        android:id="@+id/action_navigation"
+        android:title="@string/menu_navigation_list"
+        android:icon="@drawable/ic_nav_list" />
 </menu>
