@@ -56,8 +56,6 @@ navigation = [
     "androidx-navigation-navigation-fragment-ktx",
     "androidx-navigation-navigation-ui-ktx",
     "androidx-navigation-navigation-dynamic-features-fragment",
-    "androidx-navigation-fragment-ktx",
-    "androidx-navigation-ui-ktx",
     "androidx-navigation-navigation-safe-args-gradle-plugin"
 ]
 
