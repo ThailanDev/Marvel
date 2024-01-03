@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">core-android</string>
+    <string name="navigation_label_list_fragment">ListFragment</string>
 </resources>

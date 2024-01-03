@@ -9,5 +9,5 @@
         android:id="@+id/listFragment"
         android:name="com.example.list.ListFragment"
         tools:layout="@layout/fragment_list"
-        android:label="ListFragment" />
+        android:label="navi" />
 </navigation>

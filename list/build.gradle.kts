@@ -34,6 +34,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":core-android"))
     implementation(libs.bundles.common)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext)
