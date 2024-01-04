@@ -11,7 +11,7 @@ androidGradlePluginVersion = "7.4.1"
 jetbrainsKotlinAndroidVersion = "1.8.0"
 comSquareupRetrofit2Version = "2.9.0"
 lifecycleVersion = "2.5.0-alpha02"
-navigationVersion = "2.3.5"
+navigationVersion = "2.5.3"
 
 [libraries]
 
@@ -32,9 +32,7 @@ androidx-lifecycle-lifecycle-viewmodel-savedstate = { group = "androidx.lifecycl
 
 androidx-navigation-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationVersion" }
 androidx-navigation-navigation-ui-ktx = {group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationVersion"}
-androidx-navigation-navigation-dynamic-features-fragment = {group = "androidx.navigation", name = "navigation-dynamic-features-fragment", version.ref = "navigationVersion"}
 androidx-navigation-navigation-safe-args-gradle-plugin = {group = "androidx.navigation", name = "navigation-safe-args-gradle-plugin", version.ref = "navigationVersion"}
-androidx-navigation-navigation-testing = {group = "androidx.navigation", name = "navigation-testing", version.ref = "navigationVersion"}
 
 [bundles]
 
@@ -56,7 +54,6 @@ retrofit = [
 navigation = [
     "androidx-navigation-navigation-fragment-ktx",
     "androidx-navigation-navigation-ui-ktx",
-    "androidx-navigation-navigation-dynamic-features-fragment",
 ]
 
 [plugins]
@@ -64,4 +61,4 @@ navigation = [
 android-application = { id = "com.android.application", version.ref = "androidGradlePluginVersion" }
 org-jetbrains-kotlinandroid = { id = "org.jetbrains.kotlin.android", version.ref = "jetbrainsKotlinAndroidVersion" }
 com-android-library = { id = "com.android.library", version.ref = "androidGradlePluginVersion" }
-androidx-navigation-safeargs-kotlin = { id = "androidx.navigation.safeargs.kotlin"}
+androidx-navigation-safeargs-kotlin = { id = "androidx.navigation.safeargs.kotlin", version.ref = "navigationVersion"}

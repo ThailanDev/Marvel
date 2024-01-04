@@ -4,6 +4,7 @@ import configuration.ConfigData
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.org.jetbrains.kotlinandroid)
+    alias(libs.plugins.androidx.navigation.safeargs.kotlin)
 }
 
 android {
@@ -28,6 +29,10 @@ android {
             )
         }
     }
+
+    buildFeatures{
+        viewBinding = true
+    }
     compileOptions {
         sourceCompatibility = ConfigData.sourceCompatibilityVersion
         targetCompatibility = ConfigData.targetCompatibilityVersion
@@ -38,7 +43,6 @@ android {
 }
 
 dependencies {
-    implementation(project(":list"))
     implementation(libs.bundles.common)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext)

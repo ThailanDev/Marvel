@@ -7,8 +7,8 @@
     android:theme="@style/Base.Theme.Marvel"
     tools:context=".MainActivity">
 
-    <fragment
-        android:id="@+id/fragment"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_fragment_container"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -29,6 +29,6 @@
         app:itemTextColor="@color/black"
         app:menu="@menu/items_navigation"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fragment" />
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
