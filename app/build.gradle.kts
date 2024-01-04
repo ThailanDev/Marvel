@@ -43,10 +43,13 @@ android {
 }
 
 dependencies {
+    implementation(project(":list"))
+    implementation(project(":core-android"))
     implementation(libs.bundles.common)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext)
     androidTestImplementation(libs.androidx.test.espresso)
     implementation(libs.bundles.lifecycle)
     implementation(libs.bundles.navigation)
+    implementation(libs.bundles.koin)
 }

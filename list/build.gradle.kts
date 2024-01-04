@@ -11,7 +11,6 @@ android {
     defaultConfig {
         namespace = "${configuration.ConfigData.BASE_NAME}${configuration.ConfigData.LIST_MODULE}"
         minSdk = configuration.ConfigData.minSdkVersion
-        targetSdk =  configuration.ConfigData.targetSdk
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -28,8 +27,13 @@ android {
         sourceCompatibility = configuration.ConfigData.sourceCompatibilityVersion
         targetCompatibility = configuration.ConfigData.targetCompatibilityVersion
     }
+
     kotlinOptions {
         jvmTarget = configuration.ConfigData.jvmTargetVersion
+    }
+
+    buildFeatures {
+        viewBinding = true
     }
 }
 
