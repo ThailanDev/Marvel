@@ -15,6 +15,7 @@ navigationVersion = "2.5.3"
 fragmentKtxVersion = "1.6.2"
 okhttpBomVersion = "3.4.1"
 koinCoreVersion = "3.5.3"
+timberVersion = "5.0.1"
 
 [libraries]
 
@@ -46,13 +47,16 @@ io-insert-koin-koin-androidx-navigation = {group = "io.insert-koin", name = "koi
 androidx-fragment-fragment-ktx = {group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragmentKtxVersion"}
 com-squareup-okhttp3-okhttp-bom = {group = "com.squareup.okhttp3", name = "okhttp-bom", version.ref = "fragmentKtxVersion"}
 
+com-jakewharton-timber-timber = {group = "com.jakewharton.timber", name = "timber", version.ref = "timberVersion"}
+
 [bundles]
 
 common = [
     "androidx-ktx",
     "androidx-appcompat",
     "android-material",
-    "androidx-constraintlayout"
+    "androidx-constraintlayout",
+    "com-jakewharton-timber-timber"
 ]
 lifecycle = [
     "androidx-lifecycle-lifecycle-viewmodel-ktx",
