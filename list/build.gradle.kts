@@ -45,4 +45,7 @@ dependencies {
     androidTestImplementation(libs.androidx.test.espresso)
     implementation(libs.bundles.lifecycle)
     implementation(libs.bundles.navigation)
+    implementation(libs.bundles.koin)
+    implementation(libs.bundles.retrofit)
+    implementation(libs.bundles.fragment)
 }

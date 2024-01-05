@@ -12,6 +12,7 @@ jetbrainsKotlinAndroidVersion = "1.8.0"
 comSquareupRetrofit2Version = "2.9.0"
 lifecycleVersion = "2.5.0-alpha02"
 navigationVersion = "2.5.3"
+fragmentKtxVersion = "1.6.2"
 
 koinCoreVersion = "3.5.3"
 
@@ -34,9 +35,13 @@ androidx-lifecycle-lifecycle-viewmodel-savedstate = { group = "androidx.lifecycl
 
 androidx-navigation-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationVersion" }
 androidx-navigation-navigation-ui-ktx = {group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationVersion"}
-androidx-navigation-navigation-safe-args-gradle-plugin = {group = "androidx.navigation", name = "navigation-safe-args-gradle-plugin", version.ref = "navigationVersion"}
 
 io-insert-koin-koin-core = {group = "io.insert-koin", name = "koin-core", version.ref = "koinCoreVersion"}
+io-insert-koin-koin-android = {group = "io.insert-koin", name = "koin-android", version.ref = "koinCoreVersion"}
+io-insert-koin-koin-androidx-workmanager = {group = "io.insert-koin", name = "koin-androidx-workmanager", version.ref = "koinCoreVersion"}
+io-insert-koin-koin-androidx-navigation = {group = "io.insert-koin", name = "koin-androidx-navigation", version.ref = "koinCoreVersion"}
+
+androidx-fragment-fragment-ktx = {group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragmentKtxVersion"}
 
 [bundles]
 
@@ -60,7 +65,14 @@ navigation = [
     "androidx-navigation-navigation-ui-ktx",
 ]
 koin = [
-    "io-insert-koin-koin-core"
+    "io-insert-koin-koin-core",
+    "io-insert-koin-koin-android",
+    "io-insert-koin-koin-androidx-workmanager",
+    "io-insert-koin-koin-androidx-navigation"
+]
+
+fragment = [
+    "androidx-fragment-fragment-ktx",
 ]
 
 [plugins]
