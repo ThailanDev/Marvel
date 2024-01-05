@@ -13,7 +13,7 @@ comSquareupRetrofit2Version = "2.9.0"
 lifecycleVersion = "2.5.0-alpha02"
 navigationVersion = "2.5.3"
 fragmentKtxVersion = "1.6.2"
-okhttpBomVersion = "4.12.0"
+okhttpBomVersion = "3.4.1"
 koinCoreVersion = "3.5.3"
 
 [libraries]
@@ -28,6 +28,8 @@ androidx-test-espresso = { group = "androidx.test.espresso", name = "espresso-co
 
 com-squareup-retrofit2 = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "comSquareupRetrofit2Version" }
 com-squareup-retrofit2-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "comSquareupRetrofit2Version" }
+
+com-squareup-okhttp3 = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttpBomVersion" }
 
 androidx-lifecycle-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleVersion" }
 androidx-lifecycle-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycleVersion" }
@@ -60,6 +62,7 @@ lifecycle = [
 retrofit = [
     "com-squareup-retrofit2",
     "com-squareup-retrofit2-converter-gson",
+    "com-squareup-okhttp3"
 ]
 navigation = [
     "androidx-navigation-navigation-fragment-ktx",
