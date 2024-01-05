@@ -8,18 +8,20 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 val networkModule = module {
-    factory { AuthInterceptor() }
-    factory { provideOkHttpClient(get()) }
+    factory { provideOkHttpClient() }
     factory { providerService(get()) }
     single { provideRetrofit(get()) }
 }
 
-fun provideOkHttpClient(authInterceptor: AuthInterceptor): OkHttpClient {
-    return OkHttpClient().newBuilder().addInterceptor(authInterceptor).build()
+fun provideOkHttpClient(): OkHttpClient {
+    return OkHttpClient()
 }
 fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
-    return Retrofit.Builder().baseUrl(Constants.BASE_URL).client(okHttpClient)
-        .addConverterFactory(GsonConverterFactory.create()).build()
+    return Retrofit.Builder()
+        .baseUrl(Constants.BASE_URL)
+        .addConverterFactory(GsonConverterFactory.create())
+        .client(okHttpClient)
+        .build()
 }
 
 fun providerService(retrofit: Retrofit): ApiService = retrofit.create(ApiService::class.java)

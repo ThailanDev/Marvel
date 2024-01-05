@@ -13,7 +13,7 @@ comSquareupRetrofit2Version = "2.9.0"
 lifecycleVersion = "2.5.0-alpha02"
 navigationVersion = "2.5.3"
 fragmentKtxVersion = "1.6.2"
-
+okhttpBomVersion = "4.12.0"
 koinCoreVersion = "3.5.3"
 
 [libraries]
@@ -42,6 +42,7 @@ io-insert-koin-koin-androidx-workmanager = {group = "io.insert-koin", name = "ko
 io-insert-koin-koin-androidx-navigation = {group = "io.insert-koin", name = "koin-androidx-navigation", version.ref = "koinCoreVersion"}
 
 androidx-fragment-fragment-ktx = {group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragmentKtxVersion"}
+com-squareup-okhttp3-okhttp-bom = {group = "com.squareup.okhttp3", name = "okhttp-bom", version.ref = "fragmentKtxVersion"}
 
 [bundles]
 
@@ -70,7 +71,6 @@ koin = [
     "io-insert-koin-koin-androidx-workmanager",
     "io-insert-koin-koin-androidx-navigation"
 ]
-
 fragment = [
     "androidx-fragment-fragment-ktx",
 ]
