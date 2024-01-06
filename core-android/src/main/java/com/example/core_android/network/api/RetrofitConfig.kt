@@ -20,37 +20,29 @@ val networkModule = module {
 }
 
 fun provideOkHttpClient(): OkHttpClient {
-    val loggin = HttpLoggingInterceptor()
-    loggin.level = HttpLoggingInterceptor.Level.BODY
+    val httpLoggingInterceptor = HttpLoggingInterceptor()
+    httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
 
-    return OkHttpClient().newBuilder()
-        .addInterceptor{ chain ->
-            val currentTimestamp = System.currentTimeMillis()
-            val newUrl = chain.request().url()
-                .newBuilder()
-                .addQueryParameter(Constants.TS, currentTimestamp.toString())
-                .addQueryParameter(Constants.API_KEY, Constants.PUBLIC_KEY)
-                .addQueryParameter(
-                    Constants.HASH,
-                    provideToMd5Hash(currentTimestamp.toString() + Constants.PRIVATE_KEY + Constants.PUBLIC_KEY)
-                )
-                .build()
+    return OkHttpClient().newBuilder().addInterceptor { chain ->
+        val currentTimestamp = System.currentTimeMillis()
+        val newUrl = chain.request().url()
+            .newBuilder()
+            .addQueryParameter(Constants.TS, currentTimestamp.toString())
+            .addQueryParameter(Constants.API_KEY, Constants.PUBLIC_KEY)
+            .addQueryParameter(
+                Constants.HASH,
+                provideToMd5Hash(currentTimestamp.toString() + Constants.PRIVATE_KEY + Constants.PUBLIC_KEY)
+            ).build()
 
-            val newRequest = chain.request()
-                .newBuilder()
-                .url(newUrl)
-                .build()
-            chain.proceed(newRequest)
-        }
-        .addInterceptor(loggin)
-        .build()
+        val newRequest = chain.request().newBuilder().url(newUrl).build()
+        chain.proceed(newRequest)
+
+    }.addInterceptor(httpLoggingInterceptor).build()
 }
+
 fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
-    return Retrofit.Builder()
-        .baseUrl(Constants.BASE_URL)
-        .addConverterFactory(GsonConverterFactory.create())
-        .client(okHttpClient)
-        .build()
+    return Retrofit.Builder().baseUrl(Constants.BASE_URL)
+        .addConverterFactory(GsonConverterFactory.create()).client(okHttpClient).build()
 }
 
 fun provideToMd5Hash(encrypted: String): String {

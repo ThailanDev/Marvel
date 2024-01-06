@@ -48,4 +48,5 @@ dependencies {
     implementation(libs.bundles.koin)
     implementation(libs.bundles.retrofit)
     implementation(libs.bundles.fragment)
+    implementation(libs.bundles.arrow)
 }

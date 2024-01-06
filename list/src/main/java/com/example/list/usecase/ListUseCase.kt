@@ -1,11 +1,13 @@
 package com.example.list.usecase
 
+import arrow.core.Either
+import com.example.core_android.network.api.model.characters.CharacterDataWrapper
 import com.example.list.repository.ListRepositoryImpl
 
 class ListUseCase(
-    val repository: ListRepositoryImpl
+    private val repository: ListRepositoryImpl
 ) {
-    suspend fun getList() {
-        repository.getList()
+    suspend operator fun invoke() : Either<Exception, CharacterDataWrapper?> {
+        return repository.getList()
     }
 }
