@@ -8,8 +8,9 @@ import com.example.list.repository.ListDataSourcerImp
 class ListDataSource(val apiService: ApiService) : ListDataSourcerImp {
     override suspend fun getList() : Either<Exception, CharacterDataWrapper?> {
         return try {
-            val result = apiService.getCharacter().body()
-            Either.Right(result)
+            val result = apiService.getCharacter()
+            val data = result.body()
+            Either.Right(data)
         } catch (e: Exception) {
            Either.Left(Exception())
         }

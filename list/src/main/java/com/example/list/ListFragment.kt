@@ -1,6 +1,7 @@
 package com.example.list
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +17,14 @@ class ListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        viewModel.getList()
+        observer()
         return binding.root
     }
+
+    private fun observer(){
+        viewModel.state.observe(viewLifecycleOwner){
+            Log.d("Fragment", "observer: ${it.data}")
+        }
+    }
+
 }
