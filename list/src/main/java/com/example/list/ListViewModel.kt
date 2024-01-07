@@ -13,7 +13,7 @@ internal class ListViewModel(
     private val useCase: ListUseCase
 ) : ViewModel() {
 
-    var state = MutableLiveData<ListState>()
+    val state : MutableLiveData<ListState> by lazy { MutableLiveData<ListState>()  }
         private set
 
     init {
