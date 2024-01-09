@@ -1,6 +1,7 @@
 package com.example.list
 
 import android.util.Log
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -13,30 +14,31 @@ internal class ListViewModel(
     private val useCase: ListUseCase
 ) : ViewModel() {
 
-    val state : MutableLiveData<ListState> by lazy { MutableLiveData<ListState>()  }
-        private set
+    private val _currentScrambledWord = MutableLiveData<ListState>()
+    val currentScrambledWord: LiveData<ListState>
+        get() = _currentScrambledWord
 
     init {
         getList()
     }
 
     private fun getList() {
-        state.postValue(state.value?.copy(isLoading = true))
+        _currentScrambledWord.value =  ListState(isLoading = true)
         viewModelScope.launch(Dispatchers.IO) {
             useCase().fold(::isError, ::isSuccess)
         }
     }
 
     private fun isError(e: Exception) {
-        state.postValue(state.value?.copy(isError = true, isLoading = false))
+        _currentScrambledWord.value =  ListState(isError = true, isLoading = false)
     }
 
     private fun isSuccess(data: CharacterDataWrapper?) {
-        state.postValue(state.value?.copy(data = data, isLoading = false))
+        _currentScrambledWord.value = ListState(data = data)
     }
 
     internal data class ListState(
-        var data: CharacterDataWrapper?,
+        var data: CharacterDataWrapper? = null,
         val isLoading: Boolean = false,
         val isError: Boolean = false
     )

@@ -4,5 +4,5 @@ import com.google.gson.annotations.SerializedName
 
 data class CharacterDataWrapper(
     @SerializedName("data")
-    val characterDataContainer: CharacterDataContainer
+    val characterDataContainer: CharacterDataContainer? = null
 )
