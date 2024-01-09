@@ -5,7 +5,7 @@ import com.example.core_android.network.api.model.characters.CharacterDataWrappe
 import com.example.core_android.network.api.service.ApiService
 import com.example.list.repository.ListDataSourcerImp
 
-class ListDataSource(val apiService: ApiService) : ListDataSourcerImp {
+internal class ListDataSource(val apiService: ApiService) : ListDataSourcerImp {
     override suspend fun getList() : Either<Exception, CharacterDataWrapper?> {
         return try {
             val result = apiService.getCharacter()

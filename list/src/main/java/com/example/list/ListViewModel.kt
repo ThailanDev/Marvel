@@ -14,27 +14,30 @@ internal class ListViewModel(
     private val useCase: ListUseCase
 ) : ViewModel() {
 
-    private val _currentScrambledWord = MutableLiveData<ListState>()
-    val currentScrambledWord: LiveData<ListState>
-        get() = _currentScrambledWord
+    private val _state = MutableLiveData<ListState>()
+    val state: LiveData<ListState>
+        get() = _state
 
     init {
+        _state.value = ListState(data = CharacterDataWrapper())
         getList()
     }
 
     private fun getList() {
-        _currentScrambledWord.value =  ListState(isLoading = true)
+        _state.postValue(ListState(isLoading = true))
         viewModelScope.launch(Dispatchers.IO) {
             useCase().fold(::isError, ::isSuccess)
         }
     }
 
     private fun isError(e: Exception) {
-        _currentScrambledWord.value =  ListState(isError = true, isLoading = false)
+        _state.postValue(ListState(isError = true, isLoading = false))
     }
 
     private fun isSuccess(data: CharacterDataWrapper?) {
-        _currentScrambledWord.value = ListState(data = data)
+        val valorAtual = _state.value
+        val novoObjeto = valorAtual?.copy(data = data)
+        _state.value = novoObjeto ?: valorAtual
     }
 
     internal data class ListState(

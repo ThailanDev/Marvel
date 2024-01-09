@@ -4,10 +4,10 @@ import arrow.core.Either
 import com.example.core_android.network.api.model.characters.CharacterDataWrapper
 import com.example.list.repository.ListRepositoryImpl
 
-class ListUseCase(
+internal class ListUseCase(
     private val repository: ListRepositoryImpl
 ) {
-    suspend operator fun invoke() : Either<Exception, CharacterDataWrapper?> {
+    internal suspend operator fun invoke() : Either<Exception, CharacterDataWrapper?> {
         return repository.getList()
     }
 }
