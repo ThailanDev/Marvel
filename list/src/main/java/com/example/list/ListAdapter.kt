@@ -2,19 +2,42 @@ package com.example.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.AsyncListDiffer
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.list.databinding.ItemListBinding
 import com.example.core_android.network.api.model.characters.Character
 
 class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 
-    private val listItems: MutableList<Character?> = mutableListOf()
+    private val diffCallback = object : DiffUtil.ItemCallback<Character>() {
+        override fun areItemsTheSame(oldItem: Character, newItem: Character): Boolean {
+            return oldItem.hashCode() == newItem.hashCode()
+        }
+
+        override fun areContentsTheSame(oldItem: Character, newItem: Character): Boolean {
+            return oldItem.id == newItem.id && oldItem.name == newItem.name && oldItem.description == newItem.description && oldItem.thumbnail?.path == newItem.thumbnail?.path && oldItem.thumbnail?.extension == newItem.thumbnail?.extension
+        }
+
+    }
+
+    private val differ = AsyncListDiffer(this, diffCallback)
+
+    var listItems: List<Character>?
+        get() = differ.currentList
+        set(value) = differ.submitList(value)
 
     inner class ViewHolder(private val binding: ItemListBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Character?) {
-            binding.item1.text = item?.name
-            binding.item1.text = item?.description
+            binding.apply {
+                name.text = item?.name
+                description.text = if (!item?.description.isNullOrBlank()) {
+                    item?.description
+                } else {
+                    "não possui descrição"
+                }
+            }
         }
 
     }
@@ -29,12 +52,11 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
         )
     }
 
-    override fun getItemCount(): Int = listItems.size
+    override fun getItemCount(): Int = listItems?.size ?: 0
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) =
-        holder.bind(listItems[position])
-
-    fun updateList(character: List<Character>?) {
-        character?.toMutableList()?.let { listItems.addAll(it) }
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(listItems?.get(position))
     }
+
+
 }

@@ -32,7 +32,7 @@ class ListFragment : Fragment() {
     }
 
     private fun setupAdapter(character: List<Character>?) {
-        adapter.updateList(character)
+        adapter.listItems = character
         setupRecycler()
     }
 
@@ -42,10 +42,9 @@ class ListFragment : Fragment() {
 
     private fun isLoading(isLoading:Boolean) {
         if(isLoading) binding.shimmer.startShimmer() else {
-            binding.shimmer.hideShimmer()
+            binding.shimmer.stopShimmer()
+            binding.shimmer.isVisible = false
         }
-        binding.shimmer.isVisible = isLoading
-
     }
 
 }
