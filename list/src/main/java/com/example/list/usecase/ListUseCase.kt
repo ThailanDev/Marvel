@@ -1,7 +1,7 @@
 package com.example.list.usecase
 
 import arrow.core.Either
-import com.example.core_android.network.api.model.characters.CharacterDataWrapper
+import com.example.list.model.characters.CharacterDataWrapper
 import com.example.list.repository.ListRepositoryImpl
 
 internal class ListUseCase(
