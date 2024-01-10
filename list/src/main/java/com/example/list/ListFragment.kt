@@ -25,9 +25,9 @@ class ListFragment : Fragment() {
     }
 
     private fun observer() {
-        viewModel.state.observe(viewLifecycleOwner, Observer {
-            Log.d("TAG", "observer: ${it.data}")
-        })
+        viewModel.state.observe(viewLifecycleOwner) {
+            Log.d("TAG", "observer: ${it}")
+        }
     }
 
 }

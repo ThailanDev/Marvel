@@ -1,6 +1,5 @@
 package com.example.list
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -19,7 +18,7 @@ internal class ListViewModel(
         get() = _state
 
     init {
-        _state.value = ListState(data = CharacterDataWrapper())
+        _state.postValue(ListState(data = CharacterDataWrapper()))
         getList()
     }
 
@@ -35,9 +34,7 @@ internal class ListViewModel(
     }
 
     private fun isSuccess(data: CharacterDataWrapper?) {
-        val valorAtual = _state.value
-        val novoObjeto = valorAtual?.copy(data = data)
-        _state.value = novoObjeto ?: valorAtual
+        _state.postValue(_state.value?.copy(data = data) ?: _state.value)
     }
 
     internal data class ListState(
