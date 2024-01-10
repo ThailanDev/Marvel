@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.core_android.network.api.model.characters.CharacterDataWrapper
 import com.example.list.usecase.ListUseCase
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 internal class ListViewModel(
@@ -34,7 +35,10 @@ internal class ListViewModel(
     }
 
     private fun isSuccess(data: CharacterDataWrapper?) {
-        _state.postValue(_state.value?.copy(data = data, isLoading = false) ?: _state.value)
+        viewModelScope.launch {
+            delay(5000)
+            _state.postValue(_state.value?.copy(data = data, isLoading = false))
+        }
     }
 
     internal data class ListState(

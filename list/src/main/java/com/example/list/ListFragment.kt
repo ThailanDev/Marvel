@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.example.core_android.network.api.model.characters.Character
 import com.example.list.databinding.FragmentListBinding
@@ -40,6 +41,10 @@ class ListFragment : Fragment() {
     }
 
     private fun isLoading(isLoading:Boolean) {
+        if(isLoading) binding.shimmer.startShimmer() else {
+            binding.shimmer.hideShimmer()
+        }
+        binding.shimmer.isVisible = isLoading
 
     }
 
