@@ -1,13 +1,11 @@
 package com.example.list
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import com.example.core_android.network.api.model.characters.CharacterDataWrapper
+import com.example.core_android.network.api.model.characters.Character
 import com.example.list.databinding.FragmentListBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -15,6 +13,7 @@ class ListFragment : Fragment() {
 
     private val binding by lazy { FragmentListBinding.inflate(layoutInflater) }
     private val viewModel: ListViewModel by viewModel()
+    private val adapter by lazy { ListAdapter() }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -26,8 +25,22 @@ class ListFragment : Fragment() {
 
     private fun observer() {
         viewModel.state.observe(viewLifecycleOwner) {
-            Log.d("TAG", "observer: ${it}")
+            isLoading(it.isLoading)
+            setupAdapter(it.data?.characterDataContainer?.character)
         }
+    }
+
+    private fun setupAdapter(character: List<Character>?) {
+        adapter.updateList(character)
+        setupRecycler()
+    }
+
+    private fun setupRecycler() {
+        binding.recycler.adapter = adapter
+    }
+
+    private fun isLoading(isLoading:Boolean) {
+
     }
 
 }

@@ -34,7 +34,7 @@ internal class ListViewModel(
     }
 
     private fun isSuccess(data: CharacterDataWrapper?) {
-        _state.postValue(_state.value?.copy(data = data) ?: _state.value)
+        _state.postValue(_state.value?.copy(data = data, isLoading = false) ?: _state.value)
     }
 
     internal data class ListState(
