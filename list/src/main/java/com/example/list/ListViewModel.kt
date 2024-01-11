@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.core_android.network.api.model.characters.CharacterDataWrapper
+import com.example.list.model.characters.CharacterDataWrapper
 import com.example.list.usecase.ListUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay

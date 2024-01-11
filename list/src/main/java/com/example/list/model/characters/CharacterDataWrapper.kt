@@ -1,4 +1,4 @@
-package com.example.core_android.network.api.model.characters
+package com.example.list.model.characters
 
 import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
@@ -6,6 +6,4 @@ import com.google.gson.annotations.SerializedName
 data class  CharacterDataWrapper(
     @SerializedName("data")
     val characterDataContainer: CharacterDataContainer? = null
-) {
-    constructor():this(null)
-}
+)

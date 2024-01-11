@@ -1,4 +1,4 @@
-package com.example.core_android.network.api.model
+package com.example.list.model
 
 data class CharacterReponse(
     val protocol:String = "",

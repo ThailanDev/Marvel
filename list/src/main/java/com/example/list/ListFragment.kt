@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import com.example.core_android.network.api.model.characters.Character
+import com.example.list.model.characters.Character
 import com.example.list.databinding.FragmentListBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
