@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.list.databinding.ItemListBinding
-import com.example.list.model.characters.Character
+import com.example.core_android.network.api.model.characters.Character
 
 class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 
