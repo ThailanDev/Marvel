@@ -1,8 +1,9 @@
 package com.example.list.model.characters
 
+import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
-
-data class CharacterDataWrapper(
+@Keep
+data class  CharacterDataWrapper  @JvmOverloads constructor(
     @SerializedName("data")
     val characterDataContainer: CharacterDataContainer? = null
 )
