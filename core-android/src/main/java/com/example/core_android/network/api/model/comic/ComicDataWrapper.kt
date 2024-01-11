@@ -1,4 +1,4 @@
-package com.example.list.model.comic
+package com.example.core_android.network.api.model.comic
 
 import com.google.gson.annotations.SerializedName
 

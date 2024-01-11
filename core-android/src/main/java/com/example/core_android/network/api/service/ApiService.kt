@@ -7,7 +7,7 @@ import retrofit2.http.Query
 
 interface ApiService {
     @GET("{endpoint}")
-    abstract suspend fun <T> getCharacter  (
+    suspend fun <T> getCharacter  (
         @Path("endpoint") endpoint: String,
         @Query("nameStartsWith") nameStartsWith: String? = null
     ): Response<T>
