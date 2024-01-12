@@ -49,4 +49,5 @@ dependencies {
     implementation(libs.bundles.retrofit)
     implementation(libs.bundles.fragment)
     implementation(libs.bundles.arrow)
+    implementation(libs.bundles.midia)
 }

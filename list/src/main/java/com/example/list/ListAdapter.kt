@@ -1,10 +1,13 @@
 package com.example.list
 
+import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.core_android.network.api.model.characters.Character
 import com.example.list.databinding.ItemListBinding
 
@@ -29,7 +32,7 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 
     inner class ViewHolder(private val binding: ItemListBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: Character?) {
+        fun bind(item: Character?, context:Context) {
             binding.apply {
                 name.text = item?.name
                 description.text = if (!item?.description.isNullOrBlank()) {
@@ -37,6 +40,11 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
                 } else {
                     "não possui descrição"
                 }
+                val urlImage = item?.thumbnail?.path+"."+item?.thumbnail?.extension
+                val urlFormat = urlImage.replace("http","https")
+                Glide.with(context)
+                    .load(urlFormat)
+                    .into(imageView);
             }
         }
 
@@ -46,14 +54,14 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
         return ViewHolder(
             ItemListBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false
-            )
+            ),
         )
     }
 
     override fun getItemCount(): Int = listItems?.size ?: 0
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(listItems?.get(position))
+        holder.bind(listItems?.get(position), holder.itemView.context)
     }
 
 
