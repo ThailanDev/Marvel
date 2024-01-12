@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.list.databinding.ItemListBinding
 import com.example.core_android.network.api.model.characters.Character
+import com.example.list.databinding.ItemListBinding
 
 class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 
@@ -45,9 +45,7 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
             ItemListBinding.inflate(
-                LayoutInflater.from(parent.context),
-                parent,
-                false
+                LayoutInflater.from(parent.context), parent, false
             )
         )
     }
