@@ -9,6 +9,9 @@
         android:id="@+id/details_dest"
         android:name="com.example.details.DetailsFragment"
         android:label="fragment_details"
-        tools:layout="@layout/fragment_details" />
+        tools:layout="@layout/fragment_details">
+        <deepLink app:uri="myapp://delaio-details" />
+
+    </fragment>
 
 </navigation>
