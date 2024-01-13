@@ -1,5 +1,6 @@
-package com.example.list
+package com.example.list.di
 
+import com.example.list.presentation.ListViewModel
 import com.example.list.remote.ListDataSource
 import com.example.list.repository.ListDataSourcerImp
 import com.example.list.repository.ListRepository

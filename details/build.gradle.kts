@@ -2,8 +2,9 @@ import configuration.ConfigData
 
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.com.android.library)
     alias(libs.plugins.org.jetbrains.kotlinandroid)
+    alias(libs.plugins.androidx.navigation.safeargs.kotlin)
 }
 
 android {
@@ -11,11 +12,7 @@ android {
     compileSdk = ConfigData.compileSdkVersion
 
     defaultConfig {
-        applicationId =  "${ConfigData.BASE_NAME}${ConfigData.DETAILS_MODULE}"
         minSdk = ConfigData.minSdkVersion
-        targetSdk =  ConfigData.targetSdk
-        versionCode = ConfigData.versionCode
-        versionName = ConfigData.versionName
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -42,6 +39,11 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext)
     androidTestImplementation(libs.androidx.test.espresso)
-    implementation(libs.bundles.navigation)
     implementation(libs.bundles.lifecycle)
+    implementation(libs.bundles.navigation)
+    implementation(libs.bundles.koin)
+    implementation(libs.bundles.retrofit)
+    implementation(libs.bundles.fragment)
+    implementation(libs.bundles.arrow)
+    implementation(libs.bundles.midia)
 }

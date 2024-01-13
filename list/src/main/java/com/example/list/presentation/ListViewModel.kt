@@ -1,4 +1,4 @@
-package com.example.list
+package com.example.list.presentation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

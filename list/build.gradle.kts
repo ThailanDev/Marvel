@@ -2,6 +2,7 @@
 plugins {
     alias(libs.plugins.com.android.library)
     alias(libs.plugins.org.jetbrains.kotlinandroid)
+    alias(libs.plugins.androidx.navigation.safeargs.kotlin)
 }
 
 android {

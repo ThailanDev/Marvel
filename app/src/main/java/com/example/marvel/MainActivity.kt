@@ -1,5 +1,6 @@
 package com.example.marvel
 
+import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
@@ -16,6 +17,8 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_container) as NavHostFragment
         val navController = navHostFragment.navController
         binding.navigation.setupWithNavController(navController)
+        val intentAction: String? = intent?.action
+        val intentData: Uri? = intent?.data
     }
 
 }

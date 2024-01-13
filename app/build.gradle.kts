@@ -44,6 +44,7 @@ android {
 
 dependencies {
     implementation(project(":list"))
+    implementation(project(":details"))
     implementation(project(":core-android"))
     implementation(libs.bundles.common)
     testImplementation(libs.junit)
