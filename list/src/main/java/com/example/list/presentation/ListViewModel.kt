@@ -17,13 +17,14 @@ internal class ListViewModel(
     private val _state = MutableLiveData<ListState>()
     val state: LiveData<ListState>
         get() = _state
+    var firstRequest = true
 
     init {
         _state.postValue(ListState(data = CharacterDataWrapper()))
         getList()
     }
 
-    private fun getList() {
+    fun getList() {
         _state.postValue(ListState(isLoading = true))
         viewModelScope.launch(Dispatchers.IO) {
             useCase().fold(::isError, ::isSuccess)
@@ -37,7 +38,12 @@ internal class ListViewModel(
     private fun isSuccess(data: CharacterDataWrapper?) {
         viewModelScope.launch {
             delay(5000)
-            _state.postValue(_state.value?.copy(data = data, isLoading = false))
+            if (firstRequest) {
+                _state.postValue(_state.value?.copy(data = null, isLoading = false))
+                firstRequest = false
+            } else {
+                _state.postValue(_state.value?.copy(data = data, isLoading = false))
+            }
         }
     }
 

@@ -20,32 +20,43 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
-        android:fontFamily="@font/almarai_extrabold"
+        android:text="Ocorreu um erro ao tentar carregar a lista"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/icon"
-        tools:text="Ocorreu um erro ao tentar carregar a lista" />
+        app:layout_constraintTop_toBottomOf="@id/icon" />
 
     <TextView
         android:id="@+id/descricao"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
-        android:fontFamily="@font/almarai_light"
         android:text="Atualmente, estamos enfrentando dificuldades ao carregar a lista de informações no aplicativo. Este problema pode ser devido a questões temporárias de conectividade com o servidor ou a possíveis atualizações no sistema."
-        android:textSize="20sp"
+        android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title" />
 
     <Button
-        android:layout_margin="30dp"
+        android:id="@+id/retryBtn"
         android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
         android:text="Tentar carregar novamente"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/descricao"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintTop_toBottomOf="@id/descricao" />
+
+    <ImageView
+        android:id="@+id/closeBtn"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

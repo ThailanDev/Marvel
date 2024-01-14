@@ -16,6 +16,7 @@ class ListFragment : Fragment() {
     private val binding by lazy { FragmentListBinding.inflate(layoutInflater) }
     private val viewModel: ListViewModel by viewModel()
     private val adapter by lazy { ListAdapter() }
+    lateinit var dialogFragment: ScreenOfErrorFragment
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -28,14 +29,19 @@ class ListFragment : Fragment() {
     private fun observer() {
         viewModel.state.observe(viewLifecycleOwner) {
             isLoading(it.isLoading)
-            isListEmpty(true)
+            isListEmpty(it.isLoading, it.data?.characterDataContainer?.character.isNullOrEmpty())
             setupAdapter(it.data?.characterDataContainer?.character)
         }
     }
 
-    private fun isListEmpty(nullOrEmpty: Boolean) {
-        val dialogFragment = ScreenOfErrorFragment()
-        dialogFragment.show(childFragmentManager, "MyFragment")
+    private fun isListEmpty(isLoading: Boolean, nullOrEmpty: Boolean) {
+        if (!isLoading && nullOrEmpty) {
+            dialogFragment = ScreenOfErrorFragment()
+            dialogFragment.show(childFragmentManager, "MyFragment")
+            dialogFragment.retryLoading {
+                viewModel.getList()
+            }
+        }
     }
 
     private fun setupAdapter(character: List<Character>?) {
@@ -47,14 +53,14 @@ class ListFragment : Fragment() {
         binding.recycler.adapter = adapter
     }
 
-    private fun isLoading(isLoading:Boolean) {
-        if(isLoading) binding.shimmer.startShimmer() else {
+    private fun isLoading(isLoading: Boolean) {
+        if (isLoading) binding.shimmer.startShimmer() else {
             binding.shimmer.stopShimmer()
             binding.shimmer.isVisible = false
         }
     }
 
-    private fun navigateToDetails(){
+    private fun navigateToDetails() {
     }
 
 }
