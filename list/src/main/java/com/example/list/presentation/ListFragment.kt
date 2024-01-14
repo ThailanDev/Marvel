@@ -6,8 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.ListFragment
-import androidx.navigation.fragment.findNavController
+import com.example.core_android.error.ScreenOfErrorFragment
 import com.example.core_android.network.api.model.characters.Character
 import com.example.list.databinding.FragmentListBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -23,17 +22,20 @@ class ListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         observer()
-//        Glide.with(this)
-//            .load("https://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg")
-//            .into(binding.imageView);
         return binding.root
     }
 
     private fun observer() {
         viewModel.state.observe(viewLifecycleOwner) {
             isLoading(it.isLoading)
+            isListEmpty(true)
             setupAdapter(it.data?.characterDataContainer?.character)
         }
+    }
+
+    private fun isListEmpty(nullOrEmpty: Boolean) {
+        val dialogFragment = ScreenOfErrorFragment()
+        dialogFragment.show(childFragmentManager, "MyFragment")
     }
 
     private fun setupAdapter(character: List<Character>?) {

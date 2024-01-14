@@ -22,6 +22,11 @@ android {
             )
         }
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
     compileOptions {
         sourceCompatibility = configuration.ConfigData.sourceCompatibilityVersion
         targetCompatibility = configuration.ConfigData.targetCompatibilityVersion
