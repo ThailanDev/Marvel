@@ -16,11 +16,9 @@ class ListFragment : Fragment() {
     private val binding by lazy { FragmentListBinding.inflate(layoutInflater) }
     private val viewModel: ListViewModel by viewModel()
     private val adapter by lazy { ListAdapter() }
-    lateinit var dialogFragment: ScreenOfErrorFragment
+    private lateinit var dialogFragment: ScreenOfErrorFragment
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         observer()
         return binding.root
@@ -38,10 +36,12 @@ class ListFragment : Fragment() {
         if (!isLoading && nullOrEmpty) {
             dialogFragment = ScreenOfErrorFragment()
             dialogFragment.show(childFragmentManager, "MyFragment")
-            dialogFragment.retryLoading {
-                viewModel.getList()
-            }
+            dialogFragment.retryLoading(::retryLoading)
         }
+    }
+
+    private fun retryLoading(){
+
     }
 
     private fun setupAdapter(character: List<Character>?) {
