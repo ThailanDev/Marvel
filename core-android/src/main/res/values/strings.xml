@@ -4,6 +4,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="compose_shortcut_short_label1">teste1</string>
-    <string name="compose_shortcut_long_label1">teste2</string>
+    <string name="compose_shortcut_short_label5">teste5</string>
+    <string name="shortcuts_screen_details">Tela detalhes</string>
+    <string name="shortcuts_screen_list">Tela Lista</string>
     <string name="compose_disabled_message1">teste3</string>
+    <string name="compose_disabled_message9">teste9</string>
 </resources>

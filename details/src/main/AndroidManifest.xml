@@ -10,7 +10,7 @@
         android:theme="@style/Theme.Marvel">
         <meta-data
             android:name="android.app.shortcuts"
-            android:resource="@xml/shortcuts" />
+            android:resource="@xml/shortcuts_go_to_details" />
     </application>
 
 </manifest>

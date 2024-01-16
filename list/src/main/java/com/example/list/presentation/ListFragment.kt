@@ -21,6 +21,12 @@ class ListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         observer()
+
+        // Inicializar o Cast SDK
+
+        // Adicionar botão de transmissão à barra de ação
+//        CastButtonFactory.setUpMediaRouteButton(requireContext(), menu, R.id.media_route_menu_item)
+
         return binding.root
     }
 
@@ -33,11 +39,11 @@ class ListFragment : Fragment() {
     }
 
     private fun isListEmpty(isLoading: Boolean, nullOrEmpty: Boolean) {
-        if (!isLoading && nullOrEmpty) {
-            dialogFragment = ScreenOfErrorFragment()
-            dialogFragment.show(childFragmentManager, "MyFragment")
-            dialogFragment.retryLoading(::retryLoading)
-        }
+//        if (!isLoading && nullOrEmpty) {
+//            dialogFragment = ScreenOfErrorFragment()
+//            dialogFragment.show(childFragmentManager, "MyFragment")
+//            dialogFragment.retryLoading(::retryLoading)
+//        }
     }
 
     private fun retryLoading(){

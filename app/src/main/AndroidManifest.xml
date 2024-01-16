@@ -32,9 +32,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-            <meta-data
-                android:name="android.app.shortcuts"
-                android:resource="@xml/shortcuts" />
+<!--            <meta-data-->
+<!--                android:name="android.app.shortcuts"-->
+<!--                android:resource="@xml/shortcuts_go_to_details" />-->
         </activity>
     </application>
 </manifest>
