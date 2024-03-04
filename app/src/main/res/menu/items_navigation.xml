@@ -5,6 +5,10 @@
         android:title="@string/menu_navigation_favoritos"
         android:icon="@drawable/ic_nav_favorite" />
     <item
+        android:id="@+id/graph_old_home"
+        android:title="@string/menu_navigation_home"
+        android:icon="@drawable/baseline_home_filled_24" />
+    <item
         android:id="@+id/list_nav_graph"
         android:title="@string/menu_navigation_list"
         android:icon="@drawable/ic_nav_list" />

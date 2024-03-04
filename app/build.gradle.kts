@@ -32,6 +32,7 @@ android {
 
     buildFeatures{
         viewBinding = true
+        dataBinding = true
     }
     compileOptions {
         sourceCompatibility = ConfigData.sourceCompatibilityVersion
@@ -45,7 +46,10 @@ android {
 dependencies {
     implementation(project(":list"))
     implementation(project(":details"))
+    implementation(project(":profile"))
     implementation(project(":core-android"))
+    implementation(project(":homenova"))
+    implementation(project(":homeantiga"))
     implementation(libs.bundles.common)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext)

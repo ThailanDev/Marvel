@@ -37,13 +37,7 @@ internal class ListViewModel(
 
     private fun isSuccess(data: CharacterDataWrapper?) {
         viewModelScope.launch {
-            delay(5000)
-            if (firstRequest) {
-                _state.postValue(_state.value?.copy(data = null, isLoading = false))
-                firstRequest = false
-            } else {
-                _state.postValue(_state.value?.copy(data = data, isLoading = false))
-            }
+            _state.postValue(_state.value?.copy(data = data, isLoading = false))
         }
     }
 

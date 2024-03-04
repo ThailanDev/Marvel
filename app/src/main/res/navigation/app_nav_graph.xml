@@ -2,7 +2,23 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/list_nav_graph">
+    app:startDestination="@id/graph_old_home">
     <include app:graph="@navigation/list_nav_graph" />
+    <include app:graph="@navigation/navigation_profile" />
     <include app:graph="@navigation/details_nav_graph" />
+    <include android:id="@+id/nested_graph_new_home" app:graph="@navigation/graph_new_home" />
+    <include  android:id="@+id/nested_graph_old_home"  app:graph="@navigation/graph_old_home" />
+
+    <fragment
+        android:id="@+id/homeAntigaAppFragment"
+        android:name="com.example.fragment.homeantiga.HomeAntigaFragment"
+        android:label="fragment_home_antiga">
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeNovaAppFragment"
+        android:name="com.example.homenova.HomeNovaFragment"
+        android:label="fragment_home_nova">
+    </fragment>
+
 </navigation>

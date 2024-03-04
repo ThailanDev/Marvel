@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph_old_home"
+    app:startDestination="@id/homeAntigaFragment">
+
+    <fragment
+        android:id="@+id/homeAntigaFragment"
+        android:name="com.example.fragment.homeantiga.HomeAntigaFragment"
+        android:label="fragment_home_antiga"
+        tools:layout="@layout/fragment_home_antiga">
+        <deepLink app:uri="marvel://old_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/corpoFragment"
+        android:name="com.example.fragment.corpo.CorpoFragment"
+        android:label="fragment_corpo"
+        tools:layout="@layout/fragment_corpo" />
+
+</navigation>

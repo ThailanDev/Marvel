@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph_new_home"
+    app:startDestination="@id/homeNovaFragment">
+
+    <fragment
+        android:id="@+id/homeNovaFragment"
+        android:name="com.example.homenova.HomeNovaFragment"
+        android:label="fragment_home_nova"
+        tools:layout="@layout/fragment_home_nova" >
+        <deepLink app:uri="marvel://new_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/telaIntermediariaFragment"
+        android:name="com.example.homenova.TelaIntermediariaFragment"
+        android:label="fragment_tela_intermediaria"
+        tools:layout="@layout/fragment_tela_intermediaria" />
+
+</navigation>

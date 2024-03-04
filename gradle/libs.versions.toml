@@ -19,6 +19,7 @@ timberVersion = "5.0.1"
 arrowCoreVersion = "1.2.0"
 shimmerVersion = "0.5.0"
 glideVersion = "4.16.0"
+swiperefreshlayoutVersion = "1.1.0"
 
 [libraries]
 
@@ -49,6 +50,7 @@ com-github-bumptech-glide = {module = "com.github.bumptech.glide:glide", version
 junit = { group = "junit", name = "junit", version.ref = "junitVersion" }
 androidx-test-ext = { group = "androidx.test.ext", name = "junit", version.ref = "androidxTextExtVersion" }
 androidx-test-espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidxTestExpressoVersion" }
+androidx-swiperefreshlayout = { group = "androidx.swiperefreshlayout", name = "swiperefreshlayout", version.ref = "swiperefreshlayoutVersion" }
 
 [bundles]
 

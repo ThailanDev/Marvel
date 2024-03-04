@@ -15,7 +15,6 @@
             </builds>
           </compositeBuild>
         </compositeConfiguration>
-        <option name="testRunner" value="GRADLE" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="gradleJvm" value="#GRADLE_LOCAL_JAVA_HOME" />
         <option name="modules">
@@ -26,7 +25,10 @@
             <option value="$PROJECT_DIR$/core-android" />
             <option value="$PROJECT_DIR$/core-kotlin" />
             <option value="$PROJECT_DIR$/details" />
+            <option value="$PROJECT_DIR$/homeantiga" />
+            <option value="$PROJECT_DIR$/homenova" />
             <option value="$PROJECT_DIR$/list" />
+            <option value="$PROJECT_DIR$/profile" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />
